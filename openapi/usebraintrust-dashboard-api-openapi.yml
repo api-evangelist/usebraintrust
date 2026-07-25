@@ -1,0 +1,195 @@
+openapi: 3.1.0
+info:
+  title: Braintrust Network Stats dashboard API
+  version: '2026-07-21'
+  description: Undocumented but publicly reachable read-only JSON API behind the Braintrust "Network Stats" dashboard (info.app.usebraintrust.com). Exposes network-wide marketplace metrics (clients, jobs, proposals, talent, GSV, BTRST token supply and earnings), a weekly gross-service-value time series, average hourly rates by skill, and the public token-earner leaderboard. No authentication observed; no versioning, pagination, or rate-limit signaling observed; unknown paths return the framework default HTML 404 (no structured error envelope).
+  contact:
+    url: https://www.usebraintrust.com
+servers:
+- url: https://dashboard.app.usebraintrust.com
+  description: Public network-stats host (observed)
+tags:
+- name: dashboard
+  description: Public Braintrust network statistics.
+paths:
+  /api/dashboard:
+    get:
+      operationId: getDashboard
+      summary: Get network-wide marketplace and token statistics
+      description: Returns the aggregate Braintrust network dashboard — totals for clients, jobs, proposals, talent, token holders and earners, lifetime network GSV, BTRST fee and token-earning totals — plus the weekly GSV time series since January 2020.
+      tags:
+      - dashboard
+      responses:
+        '200':
+          description: Aggregate network statistics and weekly GSV series.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      dashboard:
+                        $ref: '#/components/schemas/Dashboard'
+                      gsv_data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/GsvPoint'
+                      quarterly_gsv_data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/QuarterlyGsvPoint'
+                      token_earners_years:
+                        type: array
+                        description: Years for which token-earner data exists (observed 2019-2026).
+                        items:
+                          type: integer
+  /api/dashboard/skill_rates:
+    get:
+      operationId: getSkillRates
+      summary: Get average hourly rates by skill
+      description: Returns the average hourly rate for each skill on the Braintrust talent network (~1,100 skills observed).
+      tags:
+      - dashboard
+      responses:
+        '200':
+          description: Average hourly rate per skill.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      skill_rates:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/SkillRate'
+  /api/dashboard/token_earners:
+    get:
+      operationId: getTokenEarners
+      summary: Get the public BTRST token-earner leaderboard
+      description: Returns the public token-earner list — first name, last initial, avatar, referral counts, jobs filled, GSV and BTRST tokens earned per community member.
+      tags:
+      - dashboard
+      responses:
+        '200':
+          description: Public token-earner leaderboard.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      token_earners:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/TokenEarner'
+components:
+  schemas:
+    SkillRate:
+      type: object
+      properties:
+        skill:
+          type: string
+        avg_rate:
+          type: string
+          description: Average hourly rate in USD, decimal-as-string.
+    QuarterlyGsvPoint:
+      type: object
+      description: Quarterly gross-service-value data point (series starts Q3 2019).
+      properties:
+        id:
+          type: string
+          format: uuid
+        year:
+          type: integer
+        quarter:
+          type: integer
+        value:
+          type: string
+          description: GSV for the quarter in USD, decimal-as-string.
+    TokenEarner:
+      type: object
+      properties:
+        user_id:
+          type: integer
+        first_name:
+          type: string
+        last_initial:
+          type: string
+        avatar:
+          type: string
+          format: uri
+        total_gsv:
+          type: string
+        total_jobs_filled:
+          type: integer
+        total_referred_employers:
+          type: integer
+        total_referred_users:
+          type: integer
+        total_tokens:
+          type: string
+    GsvPoint:
+      type: object
+      description: Weekly gross-service-value data point (series starts 2020-01-06).
+      properties:
+        id:
+          type: string
+          format: uuid
+        date:
+          type: string
+          format: date
+        value:
+          type: string
+          description: GSV for the week in USD, decimal-as-string.
+    Dashboard:
+      type: object
+      description: Aggregate network statistics snapshot (observed 2026-07-21).
+      properties:
+        id:
+          type: string
+          format: uuid
+        created_at:
+          type: string
+          format: date-time
+        average_project_duration:
+          type: integer
+          description: Average project duration (days, observed 248).
+        average_project_size:
+          type: string
+          description: Average project size in USD, decimal-as-string.
+        lifetime_network_gsv:
+          type: string
+          description: Lifetime gross service value in USD, decimal-as-string.
+        token_circulating_supply:
+          type: integer
+        token_earner_count:
+          type: integer
+        total_bt_fee:
+          type: string
+        total_clients:
+          type: integer
+        total_jobs:
+          type: integer
+        total_proposals:
+          type: integer
+        total_talent:
+          type: integer
+        total_token_holders:
+          type: integer
+        total_tokens_earned_by_non_referrals:
+          type: string
+        total_tokens_earned_by_referrals:
+          type: string
+        total_tokens_purchased:
+          type: string
+x-provenance:
+  generated: '2026-07-21'
+  method: derived
+  source: 'Live observation 2026-07-21: endpoints referenced by the Braintrust public Network Stats dashboard (https://info.app.usebraintrust.com/, its /assets/index-*.js bundle) and probed directly; all three return HTTP 200 application/json without authentication. Braintrust publishes no API documentation or spec; this document describes only the observed surface and response shapes — it is a faithful derivation, not a provider-published contract.'
