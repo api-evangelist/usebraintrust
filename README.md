@@ -1,5 +1,5 @@
-# Usebraintrust
+# Braintrust (Talent Network)
 
-Usebraintrust is a company surfaced as a portfolio company of homebrew and added to the API Evangelist network as a stub for enrichment. Sector: unknown. This profile is a lead awaiting the enrichment pipeline.
+Braintrust (usebraintrust.com) is an AI-powered talent network and hiring platform: Braintrust AIR (conversational AI interview software), the Talent Marketplace (2M+ vetted professionals), and Braintrust Nexus (enterprise workflow automation), with the BTRST token governing the network. This profile captures its public surface — including the observed Network Stats JSON API — for the API Evangelist network. Distinct from braintrust.dev, the AI evaluation platform.
 
 Backed by: homebrew — https://www.usebraintrust.com

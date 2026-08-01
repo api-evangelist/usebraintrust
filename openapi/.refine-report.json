@@ -1,0 +1,14 @@
+{
+  "provider": "usebraintrust",
+  "sources": [
+    "usebraintrust-dashboard-api-openapi.yml"
+  ],
+  "outputs": [
+    "usebraintrust-dashboard-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+probe: false
+description: >-
+  Braintrust operates a Vanta-hosted trust center linked from the AIR
+  compliance page. The compliance page documents SOC 2 Type II certification
+  ("independently verified security controls covering data availability,
+  confidentiality, and processing integrity"), an independent third-party
+  bias audit across all EEOC-protected classes, GDPR/DPA compliance, and
+  ISO 27001/NIST 800-30 alignment, with SOC 2 reports and security policies
+  available through the Vanta dashboard. The automated trust-center probe
+  (trust./security. subdomains + /trust /security /compliance paths) missed it
+  because the trust center is hosted on app.vanta.com rather than a
+  usebraintrust.com host.
+url: https://app.vanta.com/usebraintrust.com/trust/b7n730pooch9160wkcu31g
+certifications:
+  - SOC 2 Type II
+claims:
+  - GDPR / Data Protection Agreement compliant
+  - ISO 27001 / NIST 800-30 aligned (alignment claimed, not certification)
+  - Independent third-party bias audit (EEOC-protected classes, zero adverse findings)
+  - NYC Local Law 144 annual bias audit + candidate notification
+evidence:
+  - source: https://www.usebraintrust.com/products/air/compliance
+    kind: compliance-page
+    keywords: [soc 2 type ii, bias audit, eeoc, gdpr, vanta]
+  - source: https://www.usebraintrust.com/llms.txt
+    kind: llms.txt
+    keywords: [soc 2 type ii certified]

@@ -1,0 +1,23 @@
+overlay: 1.0.0
+x-provenance:
+  generated: '2026-07-21'
+  method: generated
+  source: openapi/usebraintrust-network-stats-openapi.yml
+info:
+  title: API Evangelist enhancements for the Braintrust Network Stats API
+  version: 1.0.0
+extends: openapi/usebraintrust-network-stats-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: usebraintrust
+      x-apievangelist-observed: '2026-07-21'
+      x-apievangelist-notes: >-
+        Undocumented public API observed behind the Network Stats dashboard;
+        no auth, no pagination, HTML default 404s. A published reference and
+        a structured error envelope would make this a citable open-data API.
+  - target: $.paths['/api/dashboard'].get
+    update:
+      x-apievangelist-use-case: >-
+        Open marketplace/network transparency metrics — GSV, jobs, talent,
+        and BTRST token economics for the Braintrust network.

@@ -1,8 +1,16 @@
 aid: usebraintrust
-name: Usebraintrust
-description: 'Usebraintrust is a company surfaced as a portfolio company of homebrew and added to the
-  API Evangelist network as a stub for enrichment. Sector: unknown. This profile is a lead awaiting the
-  enrichment pipeline.'
+name: Braintrust (Talent Network)
+description: >-
+  Braintrust (usebraintrust.com) is an AI-powered talent network and hiring
+  platform founded in 2018 in San Francisco. It runs three enterprise
+  products: Braintrust AIR, conversational AI interview software with
+  semantic resume scoring and a third-party-audited bias posture; the Talent
+  Marketplace, a network of 2M+ vetted professionals across engineering, ML,
+  data science, design, and finance with zero agency markup; and Braintrust
+  Nexus, enterprise workflow automation. The network is governed in part by
+  the BTRST token, and its public Network Stats dashboard is backed by an
+  open, unauthenticated JSON API captured in this profile. Distinct from
+  braintrust.dev, the AI evaluation platform.
 url: https://raw.githubusercontent.com/api-evangelist/usebraintrust/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +18,48 @@ x-backed-by:
 - homebrew
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://www.usebraintrust.com/braintrust-logo.png
 tags:
 - Company
-- Unknown
-apis: []
+- Talent Marketplace
+- AI Recruiting
+- Hiring
+- Freelancing
+- Workforce Automation
+- BTRST Token
+- Web3
+apis:
+- aid: usebraintrust:usebraintrust-dashboard-api
+  name: Braintrust (Talent Network) dashboard API
+  description: Public Braintrust network statistics.
+  humanURL: https://info.app.usebraintrust.com/
+  baseURL: https://dashboard.app.usebraintrust.com
+  tags:
+  - dashboard
+  properties:
+  - type: OpenAPI
+    url: openapi/usebraintrust-dashboard-api-openapi.yml
+  - type: Examples
+    url: examples/usebraintrust-examples.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +68,38 @@ maintainers:
 common:
 - type: Website
   url: https://www.usebraintrust.com
+- type: Documentation
+  url: https://docs.usebraintrust.com/communitydocs/
+- type: Blog
+  url: https://www.usebraintrust.com/blog
+- type: Pricing
+  url: https://www.usebraintrust.com/pricing
+- type: Support
+  url: https://support.usebraintrust.com/hc/en-us
+- type: SignUp
+  url: https://app.usebraintrust.com/auth/sign_up/
+- type: Login
+  url: https://app.usebraintrust.com/auth/login/
+- type: TermsOfService
+  url: https://www.usebraintrust.com/terms
+- type: PrivacyPolicy
+  url: https://www.usebraintrust.com/privacy-policy
+- type: LLMsTxt
+  url: llms/usebraintrust-llms.txt
+- type: WellKnown
+  url: well-known/usebraintrust-well-known.yml
+- type: ChangeLog
+  name: Braintrust AIR release notes
+  url: changelog/usebraintrust-changelog.yml
+- type: Conformance
+  url: conformance/usebraintrust-conformance.yml
+- type: Compliance
+  url: https://www.usebraintrust.com/products/air/compliance
+- type: TrustCenter
+  url: security/usebraintrust-trust-center.yml
+- type: DomainSecurity
+  url: security/usebraintrust-domain-security.yml
+- type: MCPServer
+  url: mcp/usebraintrust-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml

@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/usebraintrust-network-stats-openapi.yml
+description: >-
+  Braintrust (usebraintrust.com) publishes no official MCP server (no MCP
+  registry entry, no @modelcontextprotocol package, no docs mention found).
+  This is a CANDIDATE tool list derived from the observed public Network
+  Stats API — one tool per operation. All operations are unauthenticated
+  read-only GETs.
+server:
+  name: usebraintrust-network-stats
+  transport: http
+tools:
+  - name: get_dashboard
+    description: >-
+      Get aggregate Braintrust network statistics — clients, jobs, proposals,
+      talent, token supply/earnings, lifetime GSV — plus the weekly GSV time
+      series.
+    source_operation: openapi/usebraintrust-network-stats-openapi.yml#getDashboard
+  - name: get_skill_rates
+    description: Get average hourly rates by skill across the Braintrust talent network.
+    source_operation: openapi/usebraintrust-network-stats-openapi.yml#getSkillRates
+  - name: get_token_earners
+    description: Get the public BTRST token-earner leaderboard.
+    source_operation: openapi/usebraintrust-network-stats-openapi.yml#getTokenEarners

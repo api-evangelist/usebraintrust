@@ -1,0 +1,41 @@
+generated: '2026-07-21'
+method: searched
+description: >-
+  Results of probing the /.well-known/ discovery surface for the Braintrust
+  (usebraintrust.com) web hosts. Braintrust publishes no API base host; the
+  probed hosts are the marketing site and the marketplace app. Status is the
+  HTTP code observed at fetch time. No /.well-known/ document returned a real
+  payload: www answers 404 for every path, and app.usebraintrust.com answers
+  301 (redirect to a trailing-slash SPA route) rather than serving a document.
+  The site does publish /llms.txt (saved at llms/usebraintrust-llms.txt).
+hosts:
+  - host: https://www.usebraintrust.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /security.txt
+        status: 404
+      - path: /llms.txt
+        status: 200
+        file: ../llms/usebraintrust-llms.txt
+  - host: https://app.usebraintrust.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+        note: redirects to trailing-slash SPA route, no RFC 9116 document
+      - path: /.well-known/openid-configuration
+        status: 301
+      - path: /.well-known/oauth-authorization-server
+        status: 301
+      - path: /.well-known/api-catalog
+        status: 301
+      - path: /.well-known/ai-plugin.json
+        status: 301

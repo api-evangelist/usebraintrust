@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  Braintrust AIR compliance page
+  (https://www.usebraintrust.com/products/air/compliance) and the site llms.txt
+  (https://www.usebraintrust.com/llms.txt). Braintrust publishes no public API,
+  so there are no API-protocol conformance assertions (OAuth2/OIDC/JSON:API/
+  RFC 9457 are not applicable); this captures the company's published
+  compliance and regulatory posture for its AI hiring products.
+standards:
+  - id: soc2-type2
+    conforms: true
+    evidence: >-
+      "SOC 2 Type II — independently verified security controls covering data
+      availability, confidentiality, and processing integrity"
+      (usebraintrust.com/products/air/compliance); SOC 2 reports available via
+      a Vanta-hosted compliance dashboard.
+  - id: eeoc
+    conforms: true
+    evidence: >-
+      AIR evaluation framework documented as skills-based, structured, and
+      auditable for EEOC compliance; independent third-party bias audit across
+      all EEOC-protected classes (gender, ethnicity, intersectional, age,
+      disability status, veteran status) with zero bias detected.
+  - id: nyc-local-law-144
+    conforms: true
+    evidence: >-
+      AIR designed to meet NYC Local Law 144 including annual bias-audit
+      requirements and candidate-notification rules
+      (usebraintrust.com/how-braintrust-air-stays-compliant).
+  - id: gdpr
+    conforms: true
+    evidence: >-
+      GDPR / Data Protection Agreement compliant; PII encrypted at rest and in
+      transit, stored in the EU if required; data deletion on request.
+  - id: iso-27001
+    conforms: false
+    evidence: >-
+      Compliance page states ISO 27001/NIST 800-30 "aligned" — alignment
+      claimed, certification not claimed.
+  - id: oauth2
+    conforms: false
+    evidence: >-
+      No public API or OAuth authorization surface;
+      /.well-known/oauth-authorization-server 404 on www, 301-to-SPA on app.
+  - id: oidc
+    conforms: false
+    evidence: /.well-known/openid-configuration returns no OIDC discovery document.

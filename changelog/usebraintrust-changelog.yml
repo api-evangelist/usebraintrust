@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.usebraintrust.com/air-release-notes
+description: >-
+  Structured capture of the Braintrust AIR release notes — the dated product
+  changelog for the AIR AI-interview platform. Braintrust ships weekly,
+  date-stamped release entries (42+ weeks of history from May 2025 per the
+  site's own llms.txt). There is no public API changelog because Braintrust
+  publishes no public API; this captures the product release cadence. The live
+  page is the source of truth; this artifact records the recent window.
+docs: https://www.usebraintrust.com/air-release-notes
+product: Braintrust AIR
+versioning:
+  scheme: weekly date-based release notes (no semantic versions)
+  cadence: weekly
+  history_start: 2025-05
+entries:
+  - date: '2026-07-15'
+    latest: true
+    highlights:
+      - Application activity timeline now displays the name of the recruiter who performed each action
+      - Admins can configure disqualification reasons as optional during rejections
+  - date: '2026-07-08'
+  - date: '2026-07-02'
+  - date: '2026-06-24'
+  - date: '2026-06-18'

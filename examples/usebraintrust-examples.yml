@@ -1,0 +1,13 @@
+generated: '2026-07-21'
+method: searched
+source: https://dashboard.app.usebraintrust.com/api/dashboard
+description: >-
+  Real response captured live from the Braintrust Network Stats API on
+  2026-07-21 (HTTP 200, application/json, no authentication). Saved verbatim
+  (pretty-printed) as the reference example for the derived OpenAPI.
+examples:
+  - operation: openapi/usebraintrust-network-stats-openapi.yml#getDashboard
+    file: usebraintrust-dashboard-response.json
+    status: 200
+    content_type: application/json
+    captured: '2026-07-21'
