@@ -1,0 +1,252 @@
+{
+  "item": [
+    {
+      "id": "079b6caa-cc8e-4a27-b2c2-6a384bba681f",
+      "name": "dashboard",
+      "description": {
+        "content": "Public Braintrust network statistics.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5c790bf8-5235-46e9-8353-377054aec46b",
+          "name": "Get network-wide marketplace and token statistics",
+          "request": {
+            "name": "Get network-wide marketplace and token statistics",
+            "description": {
+              "content": "Returns the aggregate Braintrust network dashboard — totals for clients, jobs, proposals, talent, token holders and earners, lifetime network GSV, BTRST fee and token-earning totals — plus the weekly GSV time series since January 2020.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "dashboard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "35d3d0c7-3638-41cd-8c5a-62bf76305d31",
+              "name": "Aggregate network statistics and weekly GSV series.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "dashboard"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"dashboard\": {\n      \"id\": \"7b9e8eaa-8384-c948-03b1-7ae8c3d9a5b9\",\n      \"created_at\": \"1995-05-02T08:05:56.624Z\",\n      \"average_project_duration\": 8260,\n      \"average_project_size\": \"string\",\n      \"lifetime_network_gsv\": \"string\",\n      \"token_circulating_supply\": 7512,\n      \"token_earner_count\": 9602,\n      \"total_bt_fee\": \"string\",\n      \"total_clients\": 7263,\n      \"total_jobs\": 9121,\n      \"total_proposals\": 4162,\n      \"total_talent\": 7077,\n      \"total_token_holders\": 4971,\n      \"total_tokens_earned_by_non_referrals\": \"string\",\n      \"total_tokens_earned_by_referrals\": \"string\",\n      \"total_tokens_purchased\": \"string\"\n    },\n    \"gsv_data\": [\n      {\n        \"id\": \"7a2c66a4-9f50-9bb0-6777-f0b63915db0c\",\n        \"date\": \"1948-06-07\",\n        \"value\": \"string\"\n      },\n      {\n        \"id\": \"e2a2fff5-ce96-1167-e870-de08acb7ce61\",\n        \"date\": \"1949-10-19\",\n        \"value\": \"string\"\n      }\n    ],\n    \"quarterly_gsv_data\": [\n      {\n        \"id\": \"20f1ca3c-a832-a237-fde9-1555af55784a\",\n        \"year\": 9222,\n        \"quarter\": 5387,\n        \"value\": \"string\"\n      },\n      {\n        \"id\": \"800fa2aa-b9ef-2edf-6099-e85736c58420\",\n        \"year\": 3599,\n        \"quarter\": 1326,\n        \"value\": \"string\"\n      }\n    ],\n    \"token_earners_years\": [\n      1654,\n      6566\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "584cb4e5-8f38-41dc-a377-cad4956ddd4c",
+          "name": "Get average hourly rates by skill",
+          "request": {
+            "name": "Get average hourly rates by skill",
+            "description": {
+              "content": "Returns the average hourly rate for each skill on the Braintrust talent network (~1,100 skills observed).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "dashboard",
+                "skill_rates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3b7fdd28-e6d9-4ad4-8dd4-bf39b613b87f",
+              "name": "Average hourly rate per skill.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "dashboard",
+                    "skill_rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"skill_rates\": [\n      {\n        \"skill\": \"string\",\n        \"avg_rate\": \"string\"\n      },\n      {\n        \"skill\": \"string\",\n        \"avg_rate\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "471db3b1-2f45-4870-b915-d59757b0261e",
+          "name": "Get the public BTRST token-earner leaderboard",
+          "request": {
+            "name": "Get the public BTRST token-earner leaderboard",
+            "description": {
+              "content": "Returns the public token-earner list — first name, last initial, avatar, referral counts, jobs filled, GSV and BTRST tokens earned per community member.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "dashboard",
+                "token_earners"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3c62da1c-c9f3-4255-9a06-8028da36a0c7",
+              "name": "Public token-earner leaderboard.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "dashboard",
+                    "token_earners"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"token_earners\": [\n      {\n        \"user_id\": 3492,\n        \"first_name\": \"string\",\n        \"last_initial\": \"string\",\n        \"avatar\": \"https://KSkA.kmsqbXLei4grcW..Dl,YS7VYqDEF4ARIlGAqfbhcdE6AjMUinRJfKw6C\",\n        \"total_gsv\": \"string\",\n        \"total_jobs_filled\": 3315,\n        \"total_referred_employers\": 9379,\n        \"total_referred_users\": 4594,\n        \"total_tokens\": \"string\"\n      },\n      {\n        \"user_id\": 6152,\n        \"first_name\": \"string\",\n        \"last_initial\": \"string\",\n        \"avatar\": \"http://DRStnDIHLWwWdKvoMrUYpz.ximkdlP-LLk5HJqpYNCvHiaYGvPgCoLK75aHFn.VUCFN,\",\n        \"total_gsv\": \"string\",\n        \"total_jobs_filled\": 8850,\n        \"total_referred_employers\": 5966,\n        \"total_referred_users\": 4859,\n        \"total_tokens\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dashboard.app.usebraintrust.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b5605246-f8e6-4533-bc24-b884440f6f89",
+    "name": "Braintrust Network Stats dashboard API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Undocumented but publicly reachable read-only JSON API behind the Braintrust \"Network Stats\" dashboard (info.app.usebraintrust.com). Exposes network-wide marketplace metrics (clients, jobs, proposals, talent, GSV, BTRST token supply and earnings), a weekly gross-service-value time series, average hourly rates by skill, and the public token-earner leaderboard. No authentication observed; no versioning, pagination, or rate-limit signaling observed; unknown paths return the framework default HTML 404 (no structured error envelope).",
+      "type": "text/plain"
+    }
+  }
+}

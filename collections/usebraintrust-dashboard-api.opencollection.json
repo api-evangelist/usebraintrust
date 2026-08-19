@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Braintrust Network Stats dashboard API",
+    "version": "2026-07-21"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "dashboard",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get network-wide marketplace and token statistics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dashboard.app.usebraintrust.com/api/dashboard"
+          },
+          "docs": "Returns the aggregate Braintrust network dashboard — totals for clients, jobs, proposals, talent, token holders and earners, lifetime network GSV, BTRST fee and token-earning totals — plus the weekly GSV time series since January 2020."
+        },
+        {
+          "info": {
+            "name": "Get average hourly rates by skill",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dashboard.app.usebraintrust.com/api/dashboard/skill_rates"
+          },
+          "docs": "Returns the average hourly rate for each skill on the Braintrust talent network (~1,100 skills observed)."
+        },
+        {
+          "info": {
+            "name": "Get the public BTRST token-earner leaderboard",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dashboard.app.usebraintrust.com/api/dashboard/token_earners"
+          },
+          "docs": "Returns the public token-earner list — first name, last initial, avatar, referral counts, jobs filled, GSV and BTRST tokens earned per community member."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
