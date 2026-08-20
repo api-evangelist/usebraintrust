@@ -54,6 +54,8 @@ apis:
   humanURL: https://info.app.usebraintrust.com/
   baseURL: https://dashboard.app.usebraintrust.com
   tags:
+  - Dashboard
+  tags_raw:
   - dashboard
   properties:
   - type: OpenAPI
