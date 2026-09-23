@@ -1,15 +1,15 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Braintrust Network Stats dashboard API
+  title: Braintrust Network Stats Dashboard API
   version: '2026-07-21'
-  description: Undocumented but publicly reachable read-only JSON API behind the Braintrust "Network Stats" dashboard (info.app.usebraintrust.com). Exposes network-wide marketplace metrics (clients, jobs, proposals, talent, GSV, BTRST token supply and earnings), a weekly gross-service-value time series, average hourly rates by skill, and the public token-earner leaderboard. No authentication observed; no versioning, pagination, or rate-limit signaling observed; unknown paths return the framework default HTML 404 (no structured error envelope).
+  description: Undocumented but publicly reachable read-only JSON API behind the Braintrust "Network Stats" dashboard (info.app.usebraintrust.com).
   contact:
     url: https://www.usebraintrust.com
 servers:
 - url: https://dashboard.app.usebraintrust.com
   description: Public network-stats host (observed)
 tags:
-- name: dashboard
+- name: Dashboard
   description: Public Braintrust network statistics.
 paths:
   /api/dashboard:
@@ -18,7 +18,7 @@ paths:
       summary: Get network-wide marketplace and token statistics
       description: Returns the aggregate Braintrust network dashboard — totals for clients, jobs, proposals, talent, token holders and earners, lifetime network GSV, BTRST fee and token-earning totals — plus the weekly GSV time series since January 2020.
       tags:
-      - dashboard
+      - Dashboard
       responses:
         '200':
           description: Aggregate network statistics and weekly GSV series.
@@ -51,7 +51,7 @@ paths:
       summary: Get average hourly rates by skill
       description: Returns the average hourly rate for each skill on the Braintrust talent network (~1,100 skills observed).
       tags:
-      - dashboard
+      - Dashboard
       responses:
         '200':
           description: Average hourly rate per skill.
@@ -73,7 +73,7 @@ paths:
       summary: Get the public BTRST token-earner leaderboard
       description: Returns the public token-earner list — first name, last initial, avatar, referral counts, jobs filled, GSV and BTRST tokens earned per community member.
       tags:
-      - dashboard
+      - Dashboard
       responses:
         '200':
           description: Public token-earner leaderboard.
@@ -91,28 +91,19 @@ paths:
                           $ref: '#/components/schemas/TokenEarner'
 components:
   schemas:
-    SkillRate:
+    GsvPoint:
       type: object
-      properties:
-        skill:
-          type: string
-        avg_rate:
-          type: string
-          description: Average hourly rate in USD, decimal-as-string.
-    QuarterlyGsvPoint:
-      type: object
-      description: Quarterly gross-service-value data point (series starts Q3 2019).
+      description: Weekly gross-service-value data point (series starts 2020-01-06).
       properties:
         id:
           type: string
           format: uuid
-        year:
-          type: integer
-        quarter:
-          type: integer
+        date:
+          type: string
+          format: date
         value:
           type: string
-          description: GSV for the quarter in USD, decimal-as-string.
+          description: GSV for the week in USD, decimal-as-string.
     TokenEarner:
       type: object
       properties:
@@ -135,19 +126,20 @@ components:
           type: integer
         total_tokens:
           type: string
-    GsvPoint:
+    QuarterlyGsvPoint:
       type: object
-      description: Weekly gross-service-value data point (series starts 2020-01-06).
+      description: Quarterly gross-service-value data point (series starts Q3 2019).
       properties:
         id:
           type: string
           format: uuid
-        date:
-          type: string
-          format: date
+        year:
+          type: integer
+        quarter:
+          type: integer
         value:
           type: string
-          description: GSV for the week in USD, decimal-as-string.
+          description: GSV for the quarter in USD, decimal-as-string.
     Dashboard:
       type: object
       description: Aggregate network statistics snapshot (observed 2026-07-21).
@@ -189,6 +181,14 @@ components:
           type: string
         total_tokens_purchased:
           type: string
+    SkillRate:
+      type: object
+      properties:
+        skill:
+          type: string
+        avg_rate:
+          type: string
+          description: Average hourly rate in USD, decimal-as-string.
 x-provenance:
   generated: '2026-07-21'
   method: derived
