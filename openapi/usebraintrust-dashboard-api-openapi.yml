@@ -91,6 +91,20 @@ paths:
                           $ref: '#/components/schemas/TokenEarner'
 components:
   schemas:
+    QuarterlyGsvPoint:
+      type: object
+      description: Quarterly gross-service-value data point (series starts Q3 2019).
+      properties:
+        id:
+          type: string
+          format: uuid
+        year:
+          type: integer
+        quarter:
+          type: integer
+        value:
+          type: string
+          description: GSV for the quarter in USD, decimal-as-string.
     Dashboard:
       type: object
       description: Aggregate network statistics snapshot (observed 2026-07-21).
@@ -145,20 +159,6 @@ components:
         value:
           type: string
           description: GSV for the week in USD, decimal-as-string.
-    QuarterlyGsvPoint:
-      type: object
-      description: Quarterly gross-service-value data point (series starts Q3 2019).
-      properties:
-        id:
-          type: string
-          format: uuid
-        year:
-          type: integer
-        quarter:
-          type: integer
-        value:
-          type: string
-          description: GSV for the quarter in USD, decimal-as-string.
     TokenEarner:
       type: object
       properties:
