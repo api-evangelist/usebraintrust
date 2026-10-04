@@ -91,20 +91,28 @@ paths:
                           $ref: '#/components/schemas/TokenEarner'
 components:
   schemas:
-    QuarterlyGsvPoint:
+    TokenEarner:
       type: object
-      description: Quarterly gross-service-value data point (series starts Q3 2019).
       properties:
-        id:
-          type: string
-          format: uuid
-        year:
+        user_id:
           type: integer
-        quarter:
-          type: integer
-        value:
+        first_name:
           type: string
-          description: GSV for the quarter in USD, decimal-as-string.
+        last_initial:
+          type: string
+        avatar:
+          type: string
+          format: uri
+        total_gsv:
+          type: string
+        total_jobs_filled:
+          type: integer
+        total_referred_employers:
+          type: integer
+        total_referred_users:
+          type: integer
+        total_tokens:
+          type: string
     Dashboard:
       type: object
       description: Aggregate network statistics snapshot (observed 2026-07-21).
@@ -146,6 +154,14 @@ components:
           type: string
         total_tokens_purchased:
           type: string
+    SkillRate:
+      type: object
+      properties:
+        skill:
+          type: string
+        avg_rate:
+          type: string
+          description: Average hourly rate in USD, decimal-as-string.
     GsvPoint:
       type: object
       description: Weekly gross-service-value data point (series starts 2020-01-06).
@@ -159,36 +175,20 @@ components:
         value:
           type: string
           description: GSV for the week in USD, decimal-as-string.
-    TokenEarner:
+    QuarterlyGsvPoint:
       type: object
+      description: Quarterly gross-service-value data point (series starts Q3 2019).
       properties:
-        user_id:
+        id:
+          type: string
+          format: uuid
+        year:
           type: integer
-        first_name:
-          type: string
-        last_initial:
-          type: string
-        avatar:
-          type: string
-          format: uri
-        total_gsv:
-          type: string
-        total_jobs_filled:
+        quarter:
           type: integer
-        total_referred_employers:
-          type: integer
-        total_referred_users:
-          type: integer
-        total_tokens:
+        value:
           type: string
-    SkillRate:
-      type: object
-      properties:
-        skill:
-          type: string
-        avg_rate:
-          type: string
-          description: Average hourly rate in USD, decimal-as-string.
+          description: GSV for the quarter in USD, decimal-as-string.
 x-provenance:
   generated: '2026-07-21'
   method: derived
