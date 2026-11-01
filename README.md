@@ -64,6 +64,116 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Braintrust (usebraintrust.com) is an AI-powered talent network and hiring platform: Braintrust AIR (conversational AI interview software), the Talent Marketplace (2M+ vetted professionals), and Braintrust Nexus (enterprise workflow automation), with the BTRST token governing the network. This profile captures its public surface — including the observed Network Stats JSON API — for the API Evangelist network. Distinct from braintrust.dev, the AI evaluation platform.
+Braintrust (usebraintrust.com) is an AI-powered talent network and hiring platform founded in 2018 in San Francisco. It runs three enterprise products: Braintrust AIR, conversational AI interview software with semantic resume scoring and a third-party-audited bias posture; the Talent Marketplace, a network of 2M+ vetted professionals across engineering, ML, data science, design, and finance with zero agency markup; and Braintrust Nexus, enterprise workflow automation. The network is governed in part by the BTRST token, and its public Network Stats dashboard is backed by an open, unauthenticated JSON API captured in this profile. Distinct from braintrust.dev, the AI evaluation platform.
 
-Backed by: homebrew — https://www.usebraintrust.com
+**Areas:** Company · Talent Marketplace · AI Recruiting · Hiring · Freelancing · Workforce Automation · BTRST Token · Web3
+
+## Braintrust (Talent Network) on APIs.io
+
+Everything profiled for Braintrust (Talent Network) is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/usebraintrust/](https://apis.io/providers/usebraintrust/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Braintrust (Talent Network) dashboard API](https://apis.io/apis/usebraintrust/usebraintrust-dashboard-api/) — Public Braintrust network statistics.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [usebraintrust-network-stats](https://apis.io/servers/usebraintrust/usebraintrust-network-stats/)
+
+#### Examples (1)
+
+Example requests and responses.
+
+- [Usebraintrust Dashboard Response](https://apis.io/examples/usebraintrust/usebraintrust-dashboard-response/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [Braintrust Network Stats dashboard API](https://apis.io/collections/usebraintrust/open-usebraintrust-dashboard-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Usebraintrust Network Stats Overlay](https://apis.io/overlays/usebraintrust/usebraintrust-network-stats-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Usebraintrust Domain Security](https://apis.io/security/usebraintrust/usebraintrust-domain-security/)
+- [Usebraintrust Trust Center](https://apis.io/security/usebraintrust/usebraintrust-trust-center/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.usebraintrust.com)
+- [Documentation](https://docs.usebraintrust.com/communitydocs/)
+- [Pricing](https://www.usebraintrust.com/pricing)
+- [Sign up](https://app.usebraintrust.com/auth/sign_up/)
+- [Support](https://support.usebraintrust.com/hc/en-us)
+- [Blog](https://www.usebraintrust.com/blog)
+- [Compliance](https://www.usebraintrust.com/products/air/compliance)
+- [Terms of service](https://www.usebraintrust.com/terms)
+- [Privacy policy](https://www.usebraintrust.com/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 31.2** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 15.8 |
+| Contract governance | 18.2 |
+| Operational transparency | 15.8 |
+| Developer ergonomics | 18.5 |
+| Access clarity | 53.9 |
+
+**Agent readiness 17.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 23.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/usebraintrust/](https://apis.io/providers/usebraintrust/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Braintrust (Talent Network): the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/usebraintrust/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
